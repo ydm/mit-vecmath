@@ -1,12 +1,16 @@
 CXXFLAGS = -Wall -Wextra -pedantic -fPIC
+
 objects =  Matrix2f.o Matrix3f.o Matrix4f.o Quat4f.o Vector2f.o Vector3f.o Vector4f.o
 output = ./output
 
+ver = 1.1
+major = 1
+
 vecmath: $(objects) headers
-	$(CXX) -shared -Wl,-soname,libvecmath.so.1 -o $(output)/libvecmath.so.1.0 $(objects)
+	$(CXX) -shared -Wl,-soname,libvecmath.so.$(major) -o $(output)/libvecmath.so.$(ver) $(objects)
 	cd $(output)
-	ln -sf libvecmath.so.1.0 $(output)/libvecmath.so
-	ln -sf libvecmath.so.1.0 $(output)/libvecmath.so.1
+	ln -sf libvecmath.so.$(ver) $(output)/libvecmath.so
+	ln -sf libvecmath.so.$(ver) $(output)/libvecmath.so.$(major)
 
 headers:
 	mkdir -p $(output)/vecmath
@@ -24,3 +28,13 @@ Vector4f.o: Vector2f.h Vector3f.h Vector4f.h
 clean:
 	rm -f $(objects)
 	rm -fr $(output)
+
+.PHONY: install
+install: vecmath
+	mv ./output/*so* /usr/lib/
+	mv ./output/vecmath /usr/include/vecmath
+
+.PHONY: uninstall
+uninstall:
+	rm -f /usr/lib/libvecmath.so*
+	rm -fr /usr/include/vecmath
