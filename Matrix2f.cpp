@@ -99,11 +99,10 @@ void Matrix2f::setCol( int j, const Vector2f& v )
 
 float Matrix2f::determinant()
 {
-    return Matrix2f::determinant2x2
-           (
-               m_elements[ 0 ], m_elements[ 2 ],
-               m_elements[ 1 ], m_elements[ 3 ]
-           );
+    return Matrix2f::determinant2x2(
+        m_elements[ 0 ], m_elements[ 2 ],
+        m_elements[ 1 ], m_elements[ 3 ]
+    );
 }
 
 Matrix2f Matrix2f::inverse( bool* pbIsSingular, float epsilon )
@@ -128,11 +127,10 @@ Matrix2f Matrix2f::inverse( bool* pbIsSingular, float epsilon )
 
         float reciprocalDeterminant = 1.0f / determinant;
 
-        return Matrix2f
-               (
-                   m_elements[ 3 ] * reciprocalDeterminant, -m_elements[ 2 ] * reciprocalDeterminant,
-                   -m_elements[ 1 ] * reciprocalDeterminant, m_elements[ 0 ] * reciprocalDeterminant
-               );
+        return Matrix2f(
+             m_elements[ 3 ] * reciprocalDeterminant, -m_elements[ 2 ] * reciprocalDeterminant,
+            -m_elements[ 1 ] * reciprocalDeterminant,  m_elements[ 0 ] * reciprocalDeterminant
+        );
     }
 }
 
@@ -147,12 +145,10 @@ void Matrix2f::transpose()
 
 Matrix2f Matrix2f::transposed() const
 {
-    return Matrix2f
-           (
-               ( *this )( 0, 0 ), ( *this )( 1, 0 ),
-               ( *this )( 0, 1 ), ( *this )( 1, 1 )
-           );
-
+    return Matrix2f(
+        ( *this )( 0, 0 ), ( *this )( 1, 0 ),
+        ( *this )( 0, 1 ), ( *this )( 1, 1 )
+    );
 }
 
 const float *Matrix2f::getElements() const
@@ -187,7 +183,6 @@ Matrix2f Matrix2f::ones()
     {
         m.m_elements[ i ] = 1;
     }
-
     return m;
 }
 
@@ -208,11 +203,10 @@ Matrix2f Matrix2f::rotation( float degrees )
     float c = cos( degrees );
     float s = sin( degrees );
 
-    return Matrix2f
-           (
-               c, -s,
-               s, c
-           );
+    return Matrix2f(
+        c, -s,
+        s, c
+    );
 }
 
 //////////////////////////////////////////////////////////////////////////
