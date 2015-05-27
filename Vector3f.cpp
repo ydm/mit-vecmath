@@ -194,7 +194,7 @@ const float *Vector3f::getElements() const
 
 void Vector3f::print() const
 {
-    printf( "< %.4f, %.4f, %.4f >\n",
+    printf( "< %.4f, %.4f, %.4f >",
             m_elements[0], m_elements[1], m_elements[2] );
 }
 

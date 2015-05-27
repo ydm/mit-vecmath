@@ -138,7 +138,7 @@ const float *Vector2f::getElements() const
 
 void Vector2f::print() const
 {
-    printf( "< %.4f, %.4f >\n",
+    printf( "< %.4f, %.4f >",
             m_elements[0], m_elements[1] );
 }
 
