@@ -51,7 +51,6 @@ public:
 
     // ---- Utility ----
     const float *getElements() const;
-    operator float* (); // automatic type conversion for GL
     void print() const;
 
     static float determinant3x3( float m00, float m01, float m02,

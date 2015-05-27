@@ -237,11 +237,6 @@ const float *Matrix3f::getElements() const
     return m_elements;
 }
 
-Matrix3f::operator float* ()
-{
-    return m_elements;
-}
-
 void Matrix3f::print() const
 {
     printf( "[ %.4f %.4f %.4f ]\n[ %.4f %.4f %.4f ]\n[ %.4f %.4f %.4f ]\n",

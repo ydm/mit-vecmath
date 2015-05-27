@@ -70,8 +70,6 @@ public:
 
     // ---- Utility ----
     const float *getElements() const;
-    operator const float* () const; // automatic type conversion for OpenGL
-    operator float* (); // automatic type conversion for OpenG
     void print() const;
 
     static float dot( const Vector4f& v0, const Vector4f& v1 );

@@ -136,16 +136,6 @@ const float *Vector2f::getElements() const
     return m_elements;
 }
 
-Vector2f::operator const float* () const
-{
-    return m_elements;
-}
-
-Vector2f::operator float* ()
-{
-    return m_elements;
-}
-
 void Vector2f::print() const
 {
     printf( "< %.4f, %.4f >\n",

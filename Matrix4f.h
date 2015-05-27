@@ -64,9 +64,6 @@ public:
 
     // ---- Utility ----
     const float *getElements() const;
-    operator float* (); // automatic type conversion for GL
-    operator const float* () const; // automatic type conversion for GL
-
     void print() const;
 
     static Matrix4f ones();

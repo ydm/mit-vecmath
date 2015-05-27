@@ -51,8 +51,6 @@ public:
 
     // ---- Utility ----
     const float *getElements() const;
-    operator const float* () const; // automatic type conversion for OpenGL
-    operator float* (); // automatic type conversion for OpenGL
     void print() const;
 
     Vector2f& operator += ( const Vector2f& v );

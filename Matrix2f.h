@@ -40,8 +40,6 @@ public:
 
     // ---- Utility ----
     const float *getElements() const;
-
-    operator float* (); // automatic type conversion for GL
     void print() const;
 
     static float determinant2x2( float m00, float m01,

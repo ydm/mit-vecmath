@@ -192,16 +192,6 @@ const float *Vector3f::getElements() const
     return m_elements;
 }
 
-Vector3f::operator const float* () const
-{
-    return m_elements;
-}
-
-Vector3f::operator float* ()
-{
-    return m_elements;
-}
-
 void Vector3f::print() const
 {
     printf( "< %.4f, %.4f, %.4f >\n",

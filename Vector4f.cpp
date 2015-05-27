@@ -287,16 +287,6 @@ const float *Vector4f::getElements() const
     return m_elements;
 }
 
-Vector4f::operator const float* () const
-{
-    return m_elements;
-}
-
-Vector4f::operator float* ()
-{
-    return m_elements;
-}
-
 void Vector4f::print() const
 {
     printf( "< %.4f, %.4f, %.4f, %.4f >\n",
