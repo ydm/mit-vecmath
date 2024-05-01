@@ -31,7 +31,7 @@ clean:
 
 .PHONY: install
 install: vecmath
-	mv ./output/*so* /usr/lib/
+	mv ./output/libvecmath.so* /usr/lib/
 	mv ./output/vecmath /usr/include/vecmath
 
 .PHONY: uninstall
